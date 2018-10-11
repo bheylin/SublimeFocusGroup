@@ -1,0 +1,38 @@
+[
+  {
+    "caption": "Preferences",
+    "id": "preferences",
+    "children":
+    [
+      {
+        "caption": "Package Settings",
+        "id": "package-settings",
+        "children":
+        [
+          {
+            "caption": "FocusGroup",
+            "id": "FocusGroup",
+            "children": [
+              {
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/SublimeFocusGroup/FocusGroup (${platform}).sublime-settings",
+                  "user_file": "${packages}/User/FocusGroup (${platform}).sublime-settings"
+                }
+              },
+              {
+                "caption": "Key Bindings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/SublimeFocusGroup/Default (${platform}).sublime-keymap",
+                  "user_file": "${packages}/User/FocusGroup (${platform}).sublime-keymap"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
