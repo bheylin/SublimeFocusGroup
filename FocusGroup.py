@@ -32,11 +32,12 @@ class FgFocusGroup(sublime_plugin.WindowCommand):
         row_count = len(layout['rows']) - 1
 
         if column_count > 1:
-            col_focused_size = settings.get('fg.focusd_size_{}_segments'.format(column_count))
+            col_focused_size = settings.get('fg.focusd_size_{}_segments'.format(column_count), 0.6)
             self.apply_layout(column_count, col_focused_size, 'cols', layout, active_group)
 
         if row_count > 1:
-            row_focused_size = settings.get('fg.focusd_size_{}_segments'.format(row_count))
+            row_focused_size = settings.get('fg.focusd_size_{}_segments'.format(row_count), 0.6)
             self.apply_layout(row_count, row_focused_size, 'rows', layout, active_group)
 
-        self.window.run_command('set_layout', layout)
+        if column_count > 1 or row_count > 1:
+            self.window.run_command('set_layout', layout)
