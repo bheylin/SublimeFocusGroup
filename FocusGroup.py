@@ -38,9 +38,8 @@ class FgFocusGroup(sublime_plugin.WindowCommand):
 
     def run(self, **args):
         settings = get_settings()
-        in_progress = is_layout_in_progress(settings)
 
-        if in_progress:
+        if is_layout_in_progress(settings):
             return
 
         set_layout_in_progress(settings, True)
@@ -59,4 +58,4 @@ class FgFocusGroup(sublime_plugin.WindowCommand):
 
         if column_count > 1 or row_count > 1:
             self.window.run_command('set_layout', layout)
-            set_layout_in_progress(settings, True)
+            set_layout_in_progress(settings, False)
